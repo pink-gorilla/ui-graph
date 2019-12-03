@@ -7,7 +7,7 @@
          :output-dir       "out/public/js"
          :asset-path       "/js"
          :compiler-options {:optimizations :simple}
-         :modules          {:base {:entries [awb99.graph.demo]}}
+         :modules          {:base {:entries [awb99.graph-demo]}}
          :devtools         {:http-root  "out/public"
                             :http-port  9001
-                            :after-load awb99.graph.demo/run}}}}
+                            :after-load awb99.graph-demo/run}}}}

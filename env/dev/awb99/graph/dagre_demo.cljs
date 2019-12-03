@@ -12,10 +12,11 @@
 (defn demo-dagre
   []
   (let [g (new-graph)]
-   ; (.setNode g "A" #js {:label "A" :rx 5 :ry 5})
-   ; (.setNode g "B" #js {:label "B" :rx 5 :ry 5})
-        ;(.setEdge "CLOSED" "LISTEN" #js {:label "open"})
-        ;(.setEdge "CLOSED" "LISTEN" #js {:label "open"})
+    (.setNode g "A" #js {:label "A" :rx 5 :ry 5})
+    (.setNode g "B" #js {:label "B" :rx 5 :ry 5})
+    (.setNode g "C" #js {:label "B" :rx 5 :ry 5})
+    (.setEdge g "A" "B" #js {:label "start"})
+    (.setEdge g "B" "C" #js {:label "finish"})
     g))
 
 
