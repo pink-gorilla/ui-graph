@@ -1,0 +1,13 @@
+{:dependencies []
+ :source-paths ["src"
+                "env/dev"]
+; :nrepl        {:port 8703}  
+ :builds
+ {:demo {:target           :browser
+         :output-dir       "out/public/js"
+         :asset-path       "/js"
+         :compiler-options {:optimizations :simple}
+         :modules          {:base {:entries [awb99.graph.demo]}}
+         :devtools         {:http-root  "out/public"
+                            :http-port  9001
+                            :after-load awb99.graph.demo/run}}}}

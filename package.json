@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "watch": "shadow-cljs watch demo;",
+    "release": "shadow-cljs release demo;"
+  },
+  "dependencies": {
+
+    "dagre-d3": "^0.6.3",
+    "graphlib-dot": "^0.6.2"
+
+
+  }
+}
