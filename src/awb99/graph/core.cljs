@@ -15,11 +15,13 @@
 
 (defn new-graph
   []
-  (let [Graph (aget dagre-d3 "graphlib" "Graph")
-        g (Graph.)]
-    (.setGraph g #js{})
-
-    g))
+  (-> (dagre-d3/graphlib.Graph.)
+      (.setGraph #js {}))
+  ;(let [Graph (aget dagre-d3 "graphlib" "Graph")
+   ;     g (Graph.)]
+   ; (.setGraph g #js{})
+;    g)
+)
 
 
 (def layout! (aget dagre-d3 "layout"))
@@ -90,10 +92,12 @@
     g))
 
 (defn render [dom-node graph]
-  (let [R (aget dagre-d3 "render")
-        dagre-render (R.)
+  (let [;R (aget dagre-d3 "render")
+        ;dagre-render (R.)
         ;dagre-render R
-        dagre-render (new dagre-d3/render)
+        ;dagre-render (new dagre-d3/render)
+        dagre-render (dagre-d3/render.)
+
         _ (println "dagre-render:" (type dagre-render))
         container (get-container dom-node)]
     (println "rendering graph: " (.stringify js/JSON graph))
