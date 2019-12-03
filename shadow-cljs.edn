@@ -1,4 +1,5 @@
-{:dependencies []
+{:dependencies 
+ [[dorothy "0.0.7"]]
  :source-paths ["src"
                 "env/dev"]
 ; :nrepl        {:port 8703}  

@@ -6,5 +6,6 @@
                              :sign-releases false}]]
   :dependencies 
   [[org.clojure/clojurescript "1.9.854"]
-   [thheller/shadow-cljs "2.0.40"]]
+   [thheller/shadow-cljs "2.0.40"]
+   [dorothy "0.0.7"]]
   :source-paths ["src"])
