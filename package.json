@@ -6,6 +6,7 @@
   "dependencies": {
     "dagre-d3": "^0.6.3",
     "graphlib-dot": "^0.6.2",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "shadow-cljs": "^2.8.78"
   }
 }
