@@ -1,7 +1,6 @@
 (ns awb99.graph.core
   (:require
    ["graphlib-dot" :as dot]
-  ; ["lodash" :as lodash]
    ["d3" :as d3]
    ["dagre-d3" :as dagre-d3]))
 
@@ -14,14 +13,12 @@
 
 
 
-(defn make
+(defn new-graph
   []
   (let [Graph (aget dagre-d3 "graphlib" "Graph")
         g (Graph.)]
-    (.setGraph g #js{"nodesep" 5
-                     "edgesep" 10
-                     "ranksep" 10})
-    (.setDefaultEdgeLabel g (fn [x] #js{}))
+    (.setGraph g #js{})
+
     g))
 
 
@@ -82,21 +79,26 @@
   (mapv dagre-edge->cfg (vals (js->clj (aget g "_edgeLabels")))))
 
 
-
-
-
-
-
-(defn get-container []
-  (let [svg (.select d3 "svg#graphSVG")
+(defn get-container [dom-node]
+  (let [_ (println "searching container: " dom-node)
+        svg (.select d3 dom-node)
         _ (println "svg: " (.stringify js/JSON svg))
-     ]
-    svg))
+      ;  _ (println "svg count: " (.count svg))
+        g (.select svg "g")
+        _ (println "g: " (.stringify js/JSON g))
+        ]
+    g))
 
-(defn render [graph node]
-  (let [render (new dagre-d3/render)
-        svg (get-container)]
-    (println "graph: " (.stringify js/JSON graph))
-    (println "svg: " (.stringify js/JSON svg))
-    (render svg graph)
+(defn render [dom-node graph]
+  (let [R (aget dagre-d3 "render")
+        dagre-render (R.)
+        ;dagre-render R
+        dagre-render (new dagre-d3/render)
+        _ (println "dagre-render:" (type dagre-render))
+        container (get-container dom-node)]
+    (println "rendering graph: " (.stringify js/JSON graph))
+    (dagre-render container graph)
+
     ))
+
+

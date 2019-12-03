@@ -10,25 +10,16 @@
 (enable-console-print!)
 
 
-; "digraph { 1; 2; subgraph X { 3; 4 }; subgraph Y {} }"
-
-(defn demo-graph []
-  (let [g (new dagre-d3/graphlib.Graph)
-        g (.setGraph g {})]
-    (.setNode g {:shape "rect"})))
-
 
 (defn run []
   (d3-text-demo "#test-text")
   (d3-circle-demo "#test-circle")
  (println "graph-viz demo running")
-  (let [dom-node (.querySelector js/document "#graph")
-        graph (demo-dagre)
-        ]
-   
-    ;(set! (.-innerHTML div-graph)
-    (render graph dom-node)
-   ; (render (create-graph "digraph { c -> b }") div-graph)
+  (let [dom-node "svg#dagre-demo" ;(.querySelector js/document "#dagre-demo")
+        ;graph (demo-dagre)
+        ;graph (create-graph "digraph { c -> b }")
+        graph (create-graph "digraph { 1; 2; subgraph X { 3; 4 }; subgraph Y {} }")
+        ]   
+    (render dom-node graph)
 
-    ;)
     ))

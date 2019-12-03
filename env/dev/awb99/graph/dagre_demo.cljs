@@ -2,28 +2,20 @@
   (:require
    ["dagre-d3" :as dagre-d3]
    [goog.dom :as gdom]
-   [awb99.graph.core :refer [make add-edge! add-node! get-nodes get-edges layout!]]))
+   [awb99.graph.core :refer [new-graph add-edge! add-node! get-nodes get-edges layout!]]))
 
 
-(def states  ["CLOSED" "LISTEN" 
-              ;"SYN RCVD"
-              ;"CLOSING"
-              ])
 
+;; https://jsfiddle.net/f4pahbme/8/
+;; https://dagrejs.github.io/project/dagre-d3/latest/demo/shapes
 
 (defn demo-dagre
   []
-  (let [g (make)]
-   ; (map #(.setNode g % #js {:label %}) states)
-    (-> g
-        (.setNode "CLOSED" #js {:label "C"})
-        (.setNode "LISTEN" #js {:label "L"})
-        (.setEdge "CLOSED" "LISTEN" #js {:label "open"})
-        (.setEdge "CLOSED" "LISTEN" #js {:label "open"}))
-   ; (layout! g)
-    ;{:nodes (get-nodes g)
-    ; :edges (get-edges g)}
-    ;g
-    ))
+  (let [g (new-graph)]
+   ; (.setNode g "A" #js {:label "A" :rx 5 :ry 5})
+   ; (.setNode g "B" #js {:label "B" :rx 5 :ry 5})
+        ;(.setEdge "CLOSED" "LISTEN" #js {:label "open"})
+        ;(.setEdge "CLOSED" "LISTEN" #js {:label "open"})
+    g))
 
 
