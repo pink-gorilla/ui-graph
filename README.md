@@ -12,5 +12,8 @@ Not used:
 - https://github.com/mattboehm/dottask Graph editor for todo lists in clojure, creates dot.
 - https://github.com/jebberjeb/specviz  clojure spec -> dot spec
 - https://github.com/jebberjeb/fsmviz  FSM -> dot spec
+- https://github.com/matthiasn/viz.cljc dot spec -> svg
+
+https://github.com/aysylu/loom
 https://github.com/walmartlabs/vizdeps 
 
