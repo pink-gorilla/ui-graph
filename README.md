@@ -20,3 +20,8 @@ https://github.com/walmartlabs/vizdeps
 
 https://js.cytoscape.org/
 https://visjs.org/
+
+https://github.com/Engelberg/ubergraph
+An all-purpose Clojure graph data structure that implements Loom protocols and more
+
+
