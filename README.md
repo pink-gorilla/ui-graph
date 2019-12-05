@@ -31,3 +31,8 @@ https://github.com/awb99/leaderboardx
 git graph:
 https://github.com/kordano/geschichte-gorilla
 https://github.com/kordano/geschichte-example
+
+
+loom
+(use 'loom-gorilla.render)
+
