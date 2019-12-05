@@ -26,3 +26,8 @@ An all-purpose Clojure graph data structure that implements Loom protocols and m
 
 https://github.com/pink-junkjard/graph-demo/blob/master/src/main/souenzzo/graph_demo/client.cljc
 https://github.com/awb99/leaderboardx
+
+
+git graph:
+https://github.com/kordano/geschichte-gorilla
+https://github.com/kordano/geschichte-example
